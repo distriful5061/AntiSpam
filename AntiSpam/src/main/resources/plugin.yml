@@ -1,0 +1,4 @@
+name: Antispam
+version: '${project.version}'
+main: com.github.distriful5061.antispam.antispam.Antispam
+authors: [ distriful5061 ]
