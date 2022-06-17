@@ -22,12 +22,17 @@ public final class AntiSpam extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        loggerinfo("Starting up");
+        loggerinfo("Config");
         plugin = this;
         saveDefaultConfig();
         reloadConfig();
         FileConfiguration config = getConfig();
+        getServer().getPluginManager().disablePlugin(this);
 
+        loggerinfo("Command");
         Objects.requireNonNull(getCommand("menu")).setExecutor(new CommandClass());
+        loggerinfo("Listeners");
         Bukkit.getServer().getPluginManager().registerEvents(new PlayerJoinListener(),this);
     }
 
